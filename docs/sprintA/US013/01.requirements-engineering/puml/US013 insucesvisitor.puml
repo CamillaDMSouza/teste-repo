@@ -1,0 +1,20 @@
+@startuml US013v-SSD
+
+title Sequence diagram US013v-SSD  (Visitor delete user (Username))
+
+actor Visitor
+boundary System
+
+activate Visitor
+
+
+Visitor -> System: 1. Visit Website
+Visitor -> System: 2. Click on "Delete User"
+activate System
+System --> Visitor:3. Error - Only Members can delete users
+deactivate System
+deactivate Visitor
+@enduml
+
+
+@enduml

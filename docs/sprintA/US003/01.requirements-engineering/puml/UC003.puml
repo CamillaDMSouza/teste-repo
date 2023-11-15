@@ -1,0 +1,15 @@
+@startuml UC003
+left to right direction
+
+actor User
+
+rectangle "View Member Info" {
+  User --> (View Member Info)
+}
+
+rectangle "System" {
+  (View Member Info) --> (Display Member Info)
+}
+
+@enduml
+

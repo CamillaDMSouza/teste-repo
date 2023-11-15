@@ -1,0 +1,26 @@
+@startuml US002
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - View Individual Post- User
+
+autonumber
+
+actor "User" as User
+participant "System" as System
+
+activate User
+    User -> System: Access the forum
+   
+    activate System
+        System --> User : Return the default page 
+    deactivate System
+
+    User -> System : Clicks on one Post
+
+    activate System
+        System --> User : Return the post page
+    deactivate System
+
+@enduml

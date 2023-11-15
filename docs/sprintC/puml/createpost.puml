@@ -1,0 +1,81 @@
+@startuml CreatePost
+
+/'
+This SD is for the use case "Create a Post with a link"
+It is assumed for the start of this diagram that the user already filled all the html form fields and clicked on the button for submission of the post and therefore the start is at the endpoint "Post".
+'/
+
+title SD - US005 - Create a Post with a link
+
+actor "user: User" as User
+participant "postRouter: Router" as Router
+participant "middleware: Middleware" as middleware
+participant "createPostController: CreatePostController" as CreatePostController
+participant "useCase:CreatePost" as CreatePostUseCase
+participant "dto: CreatePostDTO" as CreatePostDTO
+participant "memberRepo: IMemberRepo" as IMemberRepo
+participant "title: PostTitle" as postTitle
+participant "text: PostText" as PostText
+participant "link: PostLink" as PostLink
+participant "slug: PostSlug" as PostSlug
+participant "post: Post" as Post
+participant "postRepo: IPostRepo" as IPostRepo
+database MySQL as database
+
+autonumber "<b>(0)"
+User -> Router: .callEndpoint(method: POST, route: "/", \nauthToken, headers, data, \nparams, additionalConfigs)
+activate Router
+Router -> middleware: .ensureAuthenticated()
+activate Router #LightBlue
+activate middleware
+note right: If the token was found, \njust continue the request.
+middleware --> Router: next
+deactivate middleware
+Router -> CreatePostController: .execute(req, res)
+deactivate Router #LightBlue
+activate CreatePostController
+CreatePostController -> CreatePostUseCase: .useCase
+activate CreatePostUseCase
+CreatePostUseCase -> CreatePostDTO: execute(req: CreatePostDTO)
+activate CreatePostDTO
+CreatePostDTO -> IMemberRepo: .getMemberByIdUserID(userId)
+activate CreatePostDTO #LightBlue
+activate IMemberRepo
+IMemberRepo --> CreatePostDTO: Member
+deactivate IMemberRepo
+CreatePostDTO -> postTitle: PostTitle.create(request.title)
+activate postTitle
+postTitle --> CreatePostDTO: titleOrError: Result<title>
+deactivate postTitle
+CreatePostDTO -> PostText: PostText.create(request.text)
+activate PostText
+PostText --> CreatePostDTO: textOrError: Result<text>
+deactivate PostText
+CreatePostDTO -> PostLink: PostLink.create(request.link)
+activate PostLink
+PostLink --> CreatePostDTO: linkOrError: Result<Link>
+deactivate PostLink
+CreatePostDTO -> PostSlug: PostSlug.create(title)
+activate PostSlug
+PostSlug --> CreatePostDTO: slugOrError: Result<slug>
+deactivate PostSlug
+note left: PostProps Interface in "blue"\n(member, title, text, link, slug)
+CreatePostDTO -> Post: .create(postProps)
+deactivate CreatePostDTO #LightBlue
+activate Post
+Post --> CreatePostDTO: postOrError: Result<post>
+deactivate Post
+CreatePostDTO -> IPostRepo: .save(post)
+activate IPostRepo
+IPostRepo --> CreatePostDTO: Result.ok
+deactivate IPostRepo
+CreatePostDTO --> CreatePostUseCase: Result.ok
+deactivate CreatePostDTO
+CreatePostUseCase --> CreatePostController: Result.ok
+deactivate CreatePostUseCase
+CreatePostController -> CreatePostController: executeImpl(req, res)
+CreatePostController --> Router: res.status(200): Result<ok> 
+deactivate CreatePostController
+Router --> database: .sendPost()
+
+@enduml

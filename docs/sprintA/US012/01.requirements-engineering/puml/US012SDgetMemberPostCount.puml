@@ -1,0 +1,69 @@
+@startuml SD-getMemberPostCount
+autonumber "<b>(0)"
+title US012 SD - getMemberPostCount
+
+
+actor Users
+participant Routes
+participant "getMemberPostCountController:getMemberPostCountController" as getMemberPostCountController
+participant "useCase: GetMemberPostCountUseCase" as GetMemberPostCountUseCase
+participant "memberRepo: IMemberRepo" as IMemberRepo
+participant "getMemberByUserId:getMemberByUserId" as Member
+participant "postRepo: IPostRepo" as IPostRepo
+participant "getMemberPostCount:getMemberPostCount" as PostCount
+database MySQL as DataBase
+
+
+Users -> Routes : call Endpoint (method: GET, route: "/postcount/"
+activate Routes
+
+Routes -> getMemberPostCountController: .execute(req, res)
+activate getMemberPostCountController
+
+getMemberPostCountController -> getMemberPostCountController: .executeImpl(req: DecodedExpressRequest, res: express.Response)
+getMemberPostCountController -> GetMemberPostCountUseCase: .execute(dto)
+activate GetMemberPostCountUseCase
+
+
+GetMemberPostCountUseCase -> IMemberRepo: .getMemberIdByUserId(userId: string)
+activate IMemberRepo
+
+IMemberRepo -> Member: .getMemberByUserId(userId: string)
+activate Member
+
+
+Member -> DataBase: .findOne(userId)
+activate DataBase
+
+DataBase --> Member: MemberId
+deactivate DataBase
+
+Member --> IMemberRepo: MemberId
+deactivate Member
+
+IMemberRepo --> GetMemberPostCountUseCase: MemberId
+deactivate IMemberRepo
+
+GetMemberPostCountUseCase -> IPostRepo: .getMemberPostCount (memberId: MemberId)
+activate IPostRepo
+
+IPostRepo -> PostCount: .getMemberPostCount(memberId: MemberId)
+activate PostCount
+
+PostCount -> DataBase: .count(memberId: MemberId)
+activate DataBase
+
+DataBase --> PostCount: postcount
+deactivate DataBase
+
+PostCount --> IPostRepo: postcount
+deactivate PostCount
+
+IPostRepo --> GetMemberPostCountUseCase: memberPostCount
+deactivate IPostRepo
+
+deactivate GetMemberPostCountUseCase 
+deactivate getMemberPostCountController
+deactivate Routes
+
+@enduml

@@ -1,0 +1,45 @@
+@startuml SD-Delete User
+
+title US013 SD - Delete User
+
+actor Users
+participant Routes
+participant "DeleteUserController:DeleteUserController" as DeleteUserController
+participant "useCase: DeleteUserUseCase" as DeleteUserUseCase
+participant "userRepo: IUserRepo" as IUserRepo
+participant "User:User" as User
+database MySQL as database
+
+Users -> Routes : call Endpoint (method: DELETE, route: "/", header: "Authorization")
+activate Routes
+
+Routes -> DeleteUserController: .execute(req, res)
+activate DeleteUserController
+
+DeleteUserController -> DeleteUserController: .executeImpl(req: DecodedExpressRequest,res: express.Response)
+DeleteUserController -> DeleteUserUseCase: .execute(dto)
+activate DeleteUserUseCase
+
+DeleteUserUseCase -> IUserRepo: .getUserByUserId (userId: string)
+activate IUserRepo
+
+IUserRepo -> User: .deleteUser(userid: string)
+activate User
+
+User -> database: .deleteUser(userid: string)
+activate database
+
+database --> User: UserDeleted
+deactivate database
+
+User --> IUserRepo: UserDeleted
+deactivate User
+
+IUserRepo -> IUserRepo: .save(user: User)
+IUserRepo --> DeleteUserUseCase: UserDeleted
+deactivate IUserRepo
+deactivate DeleteUserUseCase
+deactivate DeleteUserController
+deactivate Routes
+
+@enduml

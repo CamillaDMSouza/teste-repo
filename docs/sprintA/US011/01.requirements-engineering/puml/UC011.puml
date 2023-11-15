@@ -1,0 +1,9 @@
+@startuml UC011
+left to right direction
+actor "User" as us
+rectangle System {
+  usecase "View Posts by Number of votes ascending" as UC11
+
+}
+us --> UC11
+@enduml

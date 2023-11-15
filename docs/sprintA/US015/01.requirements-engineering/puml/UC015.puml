@@ -1,0 +1,9 @@
+@startuml UC015
+left to right direction
+actor "User" as us
+rectangle System {
+  usecase "View the average number of posts per user" as UC15
+
+}
+us --> UC15
+@enduml

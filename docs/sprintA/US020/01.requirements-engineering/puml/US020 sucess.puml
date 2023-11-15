@@ -1,0 +1,22 @@
+@startuml SSD
+
+title Sequence diagram US020-SSD (View the time with the highest number of posts in a day)
+
+actor Member as M
+boundary System
+
+activate M
+
+M -> System: Click on the statistics button
+activate System
+System --> M: Displays the statistics page
+deactivate System
+
+M -> System: View statistics for the time with the most posts of the day
+activate System
+System --> M: Display time statistics
+deactivate System
+
+deactivate M
+
+@enduml

@@ -1,0 +1,29 @@
+@startuml US010B-SSD
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - Vote on Comment  - Visitor - alternative 2
+
+autonumber
+
+
+actor "Visitor" as User
+participant "System" as System
+
+activate User
+
+User -> System : choose a post that has comments
+    activate System
+
+        System --> User : Show selected post
+    deactivate System
+
+    User -> System : press vote button on a comment 
+    activate System
+    
+        System --> User : display a message requiring to log in or create an account
+    deactivate System
+
+deactivate User
+@enduml

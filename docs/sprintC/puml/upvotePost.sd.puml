@@ -1,0 +1,91 @@
+@startuml SD-UpVotePost
+autonumber 
+
+actor User
+participant Routes
+participant "upvotePostController: UpvotePostController" as UpvotePostController
+participant "useCase: UpvotePost" as UpvotePostUseCase
+participant "memberRepo: IMemberRepo" as IMemberRepo
+participant "postRepo: IPostRepo" as IPostRepo
+participant "postVotesRepo: IPostVotesRepo" as IPostVotesRepo
+participant "commentRepo: ICommentRepo" as ICommentRepo
+participant "postService: PostService" as PostService
+participant "commentVotesRepo: ICommentVotesRepo" as ICommentVotesRepo
+database MySQL as database
+
+User -> Routes: call endpoint (method: "POST", route: "/upvote", header: "Authorization")
+    activate Routes
+    Routes -> UpvotePostController: execute(req, res) 
+    activate UpvotePostController
+        UpvotePostController -> UpvotePostController: executeImpl(req, res)
+        UpvotePostController -> UpvotePostUseCase: execute(dto)
+        activate UpvotePostUseCase
+            UpvotePostUseCase -> IMemberRepo: getMemberByUserId(req.userId)
+            activate IMemberRepo
+                IMemberRepo -> database: createBaseQuery()
+                IMemberRepo -> database: MemberModel.findOne
+                activate database
+                    database -> IMemberRepo: Member
+                deactivate database
+                IMemberRepo -> UpvotePostUseCase: Member 
+            deactivate IMemberRepo
+
+            UpvotePostUseCase -> IPostRepo: getPostBySlug(req.slug)
+            activate IPostRepo
+                IPostRepo -> database: createBaseQuery()
+                IPostRepo -> database: PostModel.findOne
+                activate database
+                    database -> IPostRepo: Post
+                deactivate database
+                IPostRepo -> UpvotePostUseCase: Post
+            deactivate IPostRepo
+
+            UpvotePostUseCase -> IPostVotesRepo: getVotesForPostByMemberId(post.postId, member.memberId)
+            activate IPostVotesRepo
+                IPostVotesRepo -> database: createBaseQuery()
+                IPostVotesRepo -> database: PostVote.findAll
+                activate database
+                    database -> IPostVotesRepo: PostVote[]
+                deactivate database
+                IPostVotesRepo -> UpvotePostUseCase: PostVote[]
+            deactivate IPostVotesRepo
+
+            UpvotePostUseCase -> PostService: upvotePost(post, member, existingVotesOnPostbyMember)
+            activate PostService
+                PostService -> UpvotePostUseCase: Result.ok
+            deactivate PostService
+
+            UpvotePostUseCase -> IPostRepo: save(post)
+            activate IPostRepo
+                    IPostRepo -> IPostRepo: saveComments(post.comments)
+                    IPostRepo -> ICommentRepo: saveBulk(comments.getItems())
+                    activate ICommentRepo
+                        ICommentRepo -> ICommentRepo: save(comment)
+                        ICommentRepo -> database: Create or Update comment
+                        ICommentRepo -> ICommentRepo: saveCommentVotes(comment.getVotes())
+                        ICommentRepo -> ICommentVotesRepo: saveBulk(commentVotes)
+                        activate ICommentVotesRepo
+                            ICommentVotesRepo -> ICommentVotesRepo: delete(vote)
+                            ICommentVotesRepo -> database: CommentVoteModel.destroy
+                            ICommentVotesRepo -> ICommentVotesRepo: save(vote)
+                            ICommentVotesRepo -> database: CommentVoteModel.create
+                        deactivate ICommentVotesRepo
+                    deactivate ICommentRepo
+
+                    IPostRepo -> IPostRepo: savePostVotes(post.getVotes())
+                    IPostRepo -> IPostVotesRepo: saveBulk(postVotes)
+                    activate IPostVotesRepo
+                        IPostVotesRepo -> IPostVotesRepo: delete(vote)
+                        IPostVotesRepo -> database: PostVoteModel.destroy
+                        IPostVotesRepo -> IPostVotesRepo: save(vote)
+                        IPostVotesRepo -> database: PostVoteModel.create
+                    deactivate IPostVotesRepo
+            deactivate IPostRepo
+
+            UpvotePostUseCase -> UpvotePostController:  Result.ok<void>()
+            deactivate UpvotePostUseCase
+
+        UpvotePostController -> Routes: ok(res)
+        deactivate UpvotePostController
+    deactivate Routes
+@enduml

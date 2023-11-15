@@ -1,0 +1,20 @@
+@startuml US003
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - View member info - User
+
+autonumber
+
+actor "User" as User
+participant ":System" as System
+
+activate User
+
+User -> System: Request member info
+System -> System: Retrieve member data
+System --> System: Member data
+System --> User: Member info
+
+@enduml

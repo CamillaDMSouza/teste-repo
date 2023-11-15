@@ -1,0 +1,35 @@
+@startuml SD-UpVotePost
+autonumber 
+
+actor User
+participant Routes
+participant "getAllPostsAscendingController: GetAllPostsAscendingController" as GetAllPostsAscendingController
+participant "useCase: GetAllPostsAscending " as GetAllPostsAscendingUseCase
+participant "postRepo: IPostRepo" as IPostRepo
+database MySQL as database
+
+User -> Routes: call endpoint (method: "GET", route: "/allascending")
+    activate Routes
+    Routes -> GetAllPostsAscendingController: execute(req, res) 
+    activate GetAllPostsAscendingController
+        GetAllPostsAscendingController -> GetAllPostsAscendingController: executeImpl(req, res)
+        GetAllPostsAscendingController -> GetAllPostsAscendingUseCase: execute(dto)
+        activate GetAllPostsAscendingUseCase
+             GetAllPostsAscendingUseCase-> IPostRepo: getAllPostAscending()
+            activate IPostRepo
+                IPostRepo -> database: PostModel.findAll(detailsQuery)
+                activate database
+                    database -> IPostRepo: PostDetails[]
+                deactivate database
+                IPostRepo -> GetAllPostsAscendingUseCase: Postdetails[] 
+            deactivate IPostRepo
+
+            GetAllPostsAscendingUseCase -> GetAllPostsAscendingController:  Result.ok<PostDetails[]>(posts)
+            deactivate GetAllPostsAscendingUseCase
+
+        GetAllPostsAscendingController -> Routes:  this.ok<GetAllPostsAscendingResponseDTO>(res, ...);
+        deactivate GetAllPostsAscendingController
+        Routes -> User
+    deactivate Routes
+@enduml
+

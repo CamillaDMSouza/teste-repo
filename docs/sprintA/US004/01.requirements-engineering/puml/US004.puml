@@ -1,0 +1,26 @@
+@startuml US004
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - Visualization of the Popular posts - User
+
+autonumber
+
+actor "User" as User
+participant "System" as System
+
+activate User
+    User -> System: Access the forum
+   
+    activate System
+        System --> User : Return the default page 
+    deactivate System
+
+    User -> System : Clicks on the "Popular" posts options
+
+    activate System
+        System --> User : The top "Popular" posts  
+    deactivate System
+
+@enduml

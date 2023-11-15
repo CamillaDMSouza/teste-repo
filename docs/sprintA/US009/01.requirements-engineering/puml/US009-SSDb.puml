@@ -1,0 +1,29 @@
+@startuml US009-SSDb
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - Vote on Post (as member)
+
+autonumber
+
+actor "Member" as Member
+
+participant "System" as System
+
+
+activate Member
+ 
+        Member -> System : asks to see a post on the forum
+        activate System
+    
+            System --> Member : present the selected post or a list of posts
+        deactivate System
+        
+        Member -> System : votes a post
+        activate System
+    
+            System --> Member : display the post with the counted vote
+        deactivate System
+
+@enduml

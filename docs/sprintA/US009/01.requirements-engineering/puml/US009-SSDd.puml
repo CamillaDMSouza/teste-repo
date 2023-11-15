@@ -1,0 +1,33 @@
+@startuml US009-SSDd
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - Vote on Post (duplicate downvote)
+
+autonumber
+
+actor "Member" as Member
+
+participant "System" as System
+
+activate Member
+ 
+        Member -> System : asks to see a post on the forum
+        activate System
+    
+            System --> Member : present the selected post or a list of posts
+        deactivate System
+        
+        Member -> System : downvotes a post
+        activate System
+    
+            System --> Member : display the post with the counted vote
+        deactivate System
+
+        Member -> System : tryes to downvote the same post again
+        activate System
+    
+            System --> Member : the second vote anulled the first vote and turns the vote to the initial state
+
+@enduml

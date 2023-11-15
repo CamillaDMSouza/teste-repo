@@ -1,0 +1,51 @@
+@startuml SD- Up vote comment
+
+title US010 SD - Up vote comment
+actor User
+participant Routes
+participant "upvoteCommentController:UpvoteCommentController" as UpvoteCommentController
+participant "upvoteCommentUseCase: UpvoteCommentUseCase" as UpvoteCommentUseCase
+participant "memberRepo: IMemberRepo" as IMemberRepo
+participant "commentId: CommentID" as ICommentRepo
+participant "postid: PostId" as IPostRepo
+participant "commentVote:CommentVote" as ICommentVotesRepo
+participant "postService: PostService" as PostService
+participant "post:Post" as Post
+database MySQL as database
+
+
+User -> Routes:  1. call Endpoint (method: POST)
+activate Routes
+Routes -> UpvoteCommentController: 2. .execute(req, res)
+activate UpvoteCommentController
+UpvoteCommentController -> UpvoteCommentUseCase: 3. .executeImpl(req, res)
+activate UpvoteCommentUseCase
+UpvoteCommentUseCase -> IMemberRepo: 4. .GetMemberByIdUserID(userId)
+activate IMemberRepo
+IMemberRepo --> UpvoteCommentUseCase: 5. Member
+deactivate IMemberRepo
+UpvoteCommentUseCase -> ICommentRepo: 6. getCommentByCommentId(req.commentId)
+activate ICommentRepo
+ICommentRepo --> UpvoteCommentUseCase: 7. Comment
+deactivate ICommentRepo
+UpvoteCommentUseCase -> IPostRepo: 8. getPostByPostId (postId)
+activate IPostRepo
+IPostRepo --> UpvoteCommentUseCase: 9. Post
+Deactivate IPostRepo
+UpvoteCommentUseCase -> ICommentVotesRepo: 10. .getVotesForCommentByMemberId(commentId,memberId)
+Activate ICommentVotesRepo
+ICommentVotesRepo --> UpvoteCommentUseCase: 11. CommentVote
+Deactivate ICommentVotesRepo
+UpvoteCommentUseCase -> PostService: 12. .upvoteComment(post, member, comment, existingVotesOnCommentByMember)
+Activate PostService
+PostService --> UpvoteCommentUseCase: 13 .UpvoteCommentResponse
+Deactivate PostService
+UpvoteCommentUseCase -> Post: 14 .save(post)
+Activate Post
+Post -> database: Send data to database
+Deactivate Post
+Deactivate Routes
+Deactivate UpvoteCommentController
+Deactivate UpvoteCommentUseCase
+
+@enduml

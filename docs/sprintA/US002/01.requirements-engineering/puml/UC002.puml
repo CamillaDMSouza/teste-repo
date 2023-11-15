@@ -1,0 +1,9 @@
+@startuml UC002
+left to right direction
+actor "User" as us
+rectangle System {
+  usecase "View individual post" as UC2
+
+}
+us --> UC2
+@enduml

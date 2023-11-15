@@ -1,0 +1,19 @@
+@startuml US005b-SSD
+title Sequence diagram US005b-SSD (error in title)
+
+actor Member
+boundary System
+
+activate Member
+
+Member -> System: 1. Click button "submit" Create Post
+activate System
+System -> Member: 2. View post creation form
+deactivate System
+Member -> System: 3. enter in the title less than 2 characters or more than 85 characters
+activate System
+System -> Member: 4. display error message
+deactivate System
+deactivate Member
+
+@enduml

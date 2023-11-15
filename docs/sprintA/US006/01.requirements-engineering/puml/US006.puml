@@ -1,0 +1,13 @@
+@startuml US006-SSD
+
+actor User
+activate User
+boundary System
+
+User -> System: 1 Navigates to the page with New posts
+activate System
+System -> User: 2 Displays New posts
+deactivate System
+deactivate User
+
+@enduml

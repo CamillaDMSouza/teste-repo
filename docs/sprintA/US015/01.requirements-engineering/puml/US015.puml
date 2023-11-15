@@ -1,0 +1,32 @@
+@startuml US015
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - Visualization of the average number of posts per user - User
+
+autonumber
+
+actor "User" as User
+participant "System" as System
+
+activate User
+    User -> System: Access the forum
+   
+    activate System
+        System --> User : Return the default page 
+    deactivate System
+
+    User -> System : Access the "Statistics" options
+
+    activate System
+    System -> User: Return "Statistics" Page
+    deactivate System
+
+    User -> System :Inserts a date on text box and clicks on the refresh button
+
+    activate System
+    System --> User : The average number of posts per user  
+    deactivate System
+    
+@enduml

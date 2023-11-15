@@ -1,0 +1,16 @@
+@startuml US005a-SSD
+title Sequence Diagram - US005a-SSD  (Visitor Post Creation)
+
+actor Visitor
+boundary System
+
+activate Visitor
+
+
+Visitor -> System: 1. Visit Website
+Visitor -> System: 2. Click button "submit" Create Post
+activate System
+System --> Visitor:3. Error - Only Members can create posts
+deactivate System
+deactivate Visitor
+@enduml

@@ -1,0 +1,15 @@
+@startuml activity diagram
+(*) -right-> "01 - Register New User"
+-right-> "02 - Login"
+-right-> "03 - Create a Post"
+-right-> "04 - View New Post"
+-down-> "05 - Comment on a Post"
+-left-> "06 - Comment on a Comment"
+-left-> "07 - Vote on a Post"
+-left-> "08 - Vote on the Comment"
+-down-> "09 - View Popular Posts List"
+-right-> "10 - Detail of a Post"
+-right-> "11 - View Member Info"
+-right-> "12 - Logout"
+-right-> (*)
+@enduml

@@ -1,0 +1,61 @@
+@startuml SD-creata post comment
+
+autonumber "<b>(0)"
+title US007 SD - Create post comment
+actor User
+participant Routes
+participant "replytoPostController:ReplytoPostController" as ReplytoPostController
+Participant "useCase:ReplytoPost" as ReplytoPostUseCase
+participant "slug: PostSlug" as PostSlug
+participant "postRepo:replytoPost" as IPostRepo
+participant "menberRepo:replytoPost" as IMemberRepo
+participant "member: Member" as Member
+participant "commentText:CommentText" as CommentText
+participant "comment:Comment" as Comment
+
+participant "post:Post" as Post
+database MySQL as database
+
+User -> Routes:  call Endpoint (method: POST, route: "/", header: "Authorization", )
+activate Routes
+Routes -> ReplytoPostController: .execute(req, res)
+activate ReplytoPostController
+ReplytoPostController -> ReplytoPostController: .executeImpl(req: DecodedExpressRequest,res: express.Response)
+ReplytoPostController -> ReplytoPostUseCase: .execute(dto)
+activate ReplytoPostUseCase
+ReplytoPostUseCase -> PostSlug:.createFromExisting (req.slug)
+activate PostSlug
+PostSlug --> ReplytoPostUseCase: .isFailure (SlugorError)
+deactivate PostSlug
+ReplytoPostUseCase -> IPostRepo: .getPostBySlug (Slug.Value)
+activate IPostRepo
+IPostRepo -> Post: .getPostBySlug (Slug.Value)
+activate Post
+Post --> IPostRepo: post
+deactivate Post
+IPostRepo --> ReplytoPostUseCase: post
+Deactivate IPostRepo
+ReplytoPostUseCase -> IMemberRepo:  .getMemberByUserId (userId)
+activate IMemberRepo
+IMemberRepo -> Member: .getMemberByUserId (userId)
+activate Member
+Member --> IMemberRepo:  Member
+deactivate Member
+IMemberRepo --> ReplytoPostUseCase:  Member
+deactivate IMemberRepo
+ReplytoPostUseCase -> CommentText: .create(value: req.comment);
+activate CommentText
+CommentText --> ReplytoPostUseCase: commentOrError.isFailure
+deactivate CommentText
+ReplytoPostUseCase -> Comment: .create();
+activate Comment
+Comment --> ReplytoPostUseCase: commentOrError.isFailure
+deactivate Comment
+ReplytoPostUseCase -> Post: addComment(comment)
+activate Post
+Post --> database: Save comment to database
+deactivate Post
+deactivate Routes
+deactivate ReplytoPostController
+deactivate ReplytoPostUseCase
+@enduml

@@ -1,0 +1,19 @@
+@startuml US013p-SSD
+title Sequence diagram US013p-SSD (error in Post)
+
+actor Member
+boundary System
+
+activate Member
+
+Member -> System: 1. Click button "Delete" in the user
+activate System
+System --> Member: Displays confirmation dialog box
+deactivate System
+Member -> System: 3. there are one or more posts, comments on post, or comments in comments.
+activate System
+System -> Member: 4. display error message 
+deactivate System
+deactivate Member
+
+@enduml

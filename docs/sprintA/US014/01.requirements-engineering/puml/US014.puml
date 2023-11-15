@@ -1,0 +1,25 @@
+@startuml US 014
+title US014 - View Average Comments for a Specific Day - System Sequence Diagram
+ 
+autonumber
+ 
+actor "Member" as Member
+boundary "System" as System
+ 
+activate Member
+ 
+    Member -> System : Select the Statistics Menu
+    activate System
+ 
+    System --> Member : Shows the Statistics Menu Page
+    deactivate System
+ 
+    Member -> System : Select the day to know the average comments of that day
+    activate System
+ 
+    System --> Member : Calculates the average comments of the specific day and display the result
+    deactivate System
+ 
+    deactivate System
+ 
+@enduml

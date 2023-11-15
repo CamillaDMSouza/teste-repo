@@ -1,0 +1,1136 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ddd-forum</title>
+	<meta name="description" content="Documentation for ddd-forum">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">ddd-forum</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>ddd-forum</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#github-branch-creation-cli" id="github-branch-creation-cli" style="color: inherit; text-decoration: none;">
+					<h1><a href="/docs/github/github.md">GitHub Branch Creation CLI</a></h1>
+				</a>
+				<a href="#prettier-installation-set-up" id="prettier-installation-set-up" style="color: inherit; text-decoration: none;">
+					<h1><a href="/docs/prettier/prettier.md">Prettier Installation Set-up</a></h1>
+				</a>
+				<p align="center">
+					<img src="https://user-images.githubusercontent.com/6892666/67032637-fc237200-f0e1-11e9-8a46-f5d655e71962.png"/>
+				</p>
+				<h1 align="center">DDDForum.com</h1>
+				<p align="center">
+					<a href="https://circleci.com/gh/stemmlerjs/ddd-forum"><img src="https://circleci.com/gh/circleci/circleci-docs.svg?style=svg"></a>
+					<a href="#contributors"><img src="https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square"></a>
+				</p>
+				<blockquote>
+					<p>A <a href="https://khalilstemmler.com/articles/solid-principles/solid-typescript/">SOLID</a> hackernews-inspired forum site built with TypeScript using the <a href="https://khalilstemmler.com/articles/software-design-architecture/organizing-app-logic/">clean architecture</a> and <a href="https://khalilstemmler.com/articles/domain-driven-design-intro/">DDD best practices</a>.</p>
+				</blockquote>
+				<p><img src="https://user-images.githubusercontent.com/6892666/67032446-9931db00-f0e1-11e9-894d-7bccd240c851.png" alt="DDDForum"></p>
+				<a href="#about" id="about" style="color: inherit; text-decoration: none;">
+					<h2>About</h2>
+				</a>
+				<p>DDDForum.com is the application that we build in <a href="https://solidbook.io">solidbook.io - The Software Design and Architecture Handbook</a>.</p>
+				<a href="#switch-qa-team39s-project-technical-documentation" id="switch-qa-team39s-project-technical-documentation" style="color: inherit; text-decoration: none;">
+					<h2>Switch-QA Team&#39;s Project Technical Documentation</h2>
+				</a>
+				<p>You may find a template for the project technical documentation in <a href="docs/readme.md">docs/readme.md</a>
+				You should follow this examples as a template for your own work.</p>
+				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+					<h2>Documentation</h2>
+				</a>
+				<p><a href="README-original.md">Original Readme file</a></p>
+				<p><a href="README-dyarleniber.md">Readme file from dyarleniber</a></p>
+				<a href="#running-the-project" id="running-the-project" style="color: inherit; text-decoration: none;">
+					<h2>Running the project</h2>
+				</a>
+				<ol>
+					<li>Install and start <a href="https://docs.docker.com/compose/gettingstarted/">Docker</a> if you haven&#39;t already.</li>
+					<li>Copy the <code>.env</code> template file. Feel free to change passwords and app secrets.</li>
+				</ol>
+				<pre><code class="language-bash"><span style="color: #000000">cp .env.template .env</span>
+</code></pre>
+				<ol start="3">
+					<li>Build and run the image to run the backend services.</li>
+				</ol>
+				<pre><code class="language-bash"><span style="color: #000000">docker-compose up</span>
+</code></pre>
+				<ol start="4">
+					<li>Open up an additional console and then run:</li>
+				</ol>
+				<pre><code class="language-bash"><span style="color: #000000">npm run setup:dev</span>
+<span style="color: #000000">npm run start:both</span>
+</code></pre>
+				<p>You can visit the app by going to <code>http://localhost:3000</code>.</p>
+				<a href="#demo" id="demo" style="color: inherit; text-decoration: none;">
+					<h3>Demo</h3>
+				</a>
+				<p><a href="https://dddforum.com">You can visit the site here</a>.</p>
+				<blockquote>
+					<p><code>Note</code>: It&#39;s currently deployed on free tier Heroku, which has some undesirable side-effects like shutting off the server during periods of inactivity. So if it&#39;s down for you, refresh a couple of times. Thinking about migrating this to a serverless architecture later on.</p>
+				</blockquote>
+				<a href="#technical-notes-isep" id="technical-notes-isep" style="color: inherit; text-decoration: none;">
+					<h2>Technical Notes (ISEP)</h2>
+				</a>
+				<a href="#tool-dependencies---very-important" id="tool-dependencies---very-important" style="color: inherit; text-decoration: none;">
+					<h3>Tool Dependencies - Very Important!</h3>
+				</a>
+				<p>This project requires the following tools to be present in your system.</p>
+				<p><strong>Use node version 12.22.12</strong></p>
+				<p>The use of this node version is mandatory
+				You an use <strong>nvm</strong> to manage several node version in your system (see <a href="https://github.com/nvm-sh/nvm">https://github.com/nvm-sh/nvm</a>)</p>
+				<p><strong>Python</strong>
+				You may have to install <strong>python v2.7</strong> in your system (see <a href="https://www.python.org/">https://www.python.org/</a>)</p>
+				<a href="#using-the-api" id="using-the-api" style="color: inherit; text-decoration: none;">
+					<h3>Using the API</h3>
+				</a>
+				<p>Examples of using the API (without authentication, using postman)</p>
+				<ul>
+					<li><p>Get popular posts:
+						GET <a href="http://localhost:5001/api/v1/posts/popular">http://localhost:5001/api/v1/posts/popular</a></p>
+					</li>
+					<li><p>Get new posts:
+						GET <a href="http://localhost:5001/api/v1/posts/recent">http://localhost:5001/api/v1/posts/recent</a></p>
+					</li>
+					<li><p>Get post by slug:
+						GET <a href="http://localhost:5001/api/v1/posts/?slug=9526372-gosto-muito-de-dd">http://localhost:5001/api/v1/posts/?slug=9526372-gosto-muito-de-dd</a></p>
+					</li>
+					<li><p>Get comments by slug:
+						GET <a href="http://localhost:5001/api/v1/comments/?slug=9526372-gosto-muito-de-dd">http://localhost:5001/api/v1/comments/?slug=9526372-gosto-muito-de-dd</a></p>
+					</li>
+					<li><p>Login
+							POST <a href="http://localhost:5001/api/v1/users/login">http://localhost:5001/api/v1/users/login</a>
+							body:
+							{
+							&quot;username&quot;: &quot;user&quot;,
+							&quot;password&quot;: &quot;password&quot;
+							}
+							return:
+							{
+							&quot;accessToken&quot;: &quot;...&quot;,
+							&quot;refreshToken&quot;: &quot;...&quot;
+							}
+						You can then use the &quot;accessToken&quot; for actions that require authentication, by passing the value of the accessToken in a header named &quot;Authentication&quot;. For example:</p>
+					</li>
+					<li><p>Get Me
+							GET <a href="http://localhost:5001/api/v1/users/me">http://localhost:5001/api/v1/users/me</a>
+							Headers[
+							...
+							Authorization: accessToken
+							]
+							Response:
+							{
+							&quot;user&quot;: {
+							&quot;username&quot;: &quot;atb&quot;,
+							&quot;isEmailVerified&quot;: false,
+							&quot;isAdminUser&quot;: false,
+							&quot;isDeleted&quot;: false
+							}
+						}</p>
+					</li>
+				</ul>
+				<a href="#how-to-admin-da-database" id="how-to-admin-da-database" style="color: inherit; text-decoration: none;">
+					<h3>How to Admin da database</h3>
+				</a>
+				<ul>
+					<li>open browser use localhost:8080</li>
+					<li>use:<ul>
+							<li>system: MySQL</li>
+							<li>server: mysql</li>
+							<li>username: tonysoprano</li>
+							<li>pass: 12345678</li>
+							<li>db name: data_dev</li>
+						</ul>
+					</li>
+				</ul>
+				<a href="#how-to-run-tests" id="how-to-run-tests" style="color: inherit; text-decoration: none;">
+					<h3>How to Run Tests</h3>
+				</a>
+				<p>To run tests type: npm run test</p>
+				<p>Existing unit tests:</p>
+				<ul>
+					<li>src/shared/core/Guard.spec.ts</li>
+					<li>src/modules/forum/domain/postSlug.spec.ts</li>
+					<li>src/modules/forum/domain/services/postService.spec.ts</li>
+				</ul>
+				<p>The existing tests verify some services in the domain layer. The domain layer has no dependency on the other layers, so there is no need for mocking. The tests can be executed without any dependencies (e.g., database, etc.)</p>
+				<a href="#how-to-debug" id="how-to-debug" style="color: inherit; text-decoration: none;">
+					<h3>How to Debug</h3>
+				</a>
+				<ul>
+					<li>start the services with <em>docker-compose up</em></li>
+					<li>To debug the backend in VSCode go to the tab &quot;Run and Debug&quot;, select &quot;Debug TypeScript in Node.js&quot; from the dropdown list and click the play button (this will execute the configuration with the same nsame that is located in the launch.json file (<em>.vscode/launch.json</em>))</li>
+					<li>start the front-end with <em>npm run start:public</em></li>
+					<li>open in browser: <em>localhost:3000</em></li>
+				</ul>
+				<a href="#api-tests" id="api-tests" style="color: inherit; text-decoration: none;">
+					<h3>API Tests</h3>
+				</a>
+				<p>These tests are not part of the base project. They were added by the team to test the API. The tests are in the folder <em>src/api_test</em>.</p>
+				<p>The tests are based on the project <a href="https://github.com/jmfiola/jest-api-test-typescript-example">https://github.com/jmfiola/jest-api-test-typescript-example</a>. <strong>The tests are executed against the running docker containers as well as the backend</strong>. These must be running. It is not necessary to execute the frontend to run these tests. The tests are executed in sequence, so they are not independent. The tests are executed in the order they are defined in the file (this is why we need to use the <em>--runInBand</em> jest option).</p>
+				<p>Before running API tests, you must &quot;clear&quot; all the existing data and run the containers and the backend. This will ensure that the system is always at the same state when the tests area executed (i.e., an empty database). The command that runs the API tests is <em>npm run test:api</em> and it already does all the necessary steps (see the command in package.json).</p>
+				<p><strong>0. Add Test Report Support</strong></p>
+				<p>npm install <a href="mailto:jest-html-reporter@3.0.0">jest-html-reporter@3.0.0</a> --save-dev</p>
+				<p><strong>1. Before Running Tests</strong></p>
+				<p>Start the containers:</p>
+				<pre><code><span style="color: #001080">docker</span><span style="color: #000000">-</span><span style="color: #001080">compose</span><span style="color: #000000"> </span><span style="color: #001080">up</span>
+</code></pre>
+				<p>Create the database:</p>
+				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">run</span><span style="color: #000000"> db:create:</span><span style="color: #001080">dev</span>
+<span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">run</span><span style="color: #000000"> migrate:</span><span style="color: #001080">dev</span>
+</code></pre>
+				<p>And also run the backend:</p>
+				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">run</span><span style="color: #000000"> start:</span><span style="color: #001080">dev</span>
+</code></pre>
+				<p><strong>2. Running Tests</strong></p>
+				<p><strong>a)</strong> To run only API tests (this will delete the database and recreate it, before running the tests; no need for step 3):</p>
+				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">run</span><span style="color: #000000"> test:</span><span style="color: #001080">api</span>
+</code></pre>
+				<p>A report will be generated in report.html. Coverage report will be generated in coverage/index.html. <em>Note that coverage report only covers code of the tests, it does not cover code of teh backend executed because we called the API.</em></p>
+				<p><strong>b)</strong> To run only unit tests:</p>
+				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">run</span><span style="color: #000000"> </span><span style="color: #001080">test</span><span style="color: #000000"> -- --</span><span style="color: #001080">testPathIgnorePatterns</span><span style="color: #000000">=</span><span style="color: #001080">api</span>
+</code></pre>
+				<p><strong>3. After Running Tests</strong></p>
+				<p>Stop the backend by hitting Ctrl+C in the terminal where the backend is running.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_test_US001_api_test.html">api_<wbr>test/US001.api.test</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_test_US005_api_test.html">api_<wbr>test/US005.api.test</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_test_US006_api_test.html">api_<wbr>test/US006.api.test</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_test_US007_api_test.html">api_<wbr>test/US007.api.test</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_test_US008_api_test.html">api_<wbr>test/US008.api.test</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_test_US009_api_test.html">api_<wbr>test/US009.api.test</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_test_US012_pre_func_api_test.html">api_<wbr>test/US012.pre.func.api.test</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_test_bug_test_us007_bug_test.html">api_<wbr>test/bug_<wbr>test/us007.bug.test</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_test_config_configHandler.html">api_<wbr>test/config/config<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_test_endpoints_Comments.html">api_<wbr>test/endpoints/<wbr>Comments</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_test_endpoints_Posts.html">api_<wbr>test/endpoints/<wbr>Posts</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_test_endpoints_Users.html">api_<wbr>test/endpoints/<wbr>Users</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_test_endpoints_abstracts_AEndpoint.html">api_<wbr>test/endpoints/abstracts/AEndpoint</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_test_endpoints_member.html">api_<wbr>test/endpoints/member</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_test_forum_api_test.html">api_<wbr>test/forum.api.test</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_test_restClient_RestClient.html">api_<wbr>test/rest<wbr>Client/<wbr>Rest<wbr>Client</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/api_test_tes_param_gen_US012_param_gen.html">api_<wbr>test/tes_<wbr>param_<wbr>gen/US012-<wbr>param-<wbr>gen</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/config.html">config</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/config_auth.html">config/auth</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_comment.html">modules/forum/domain/comment</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_commentDetails.html">modules/forum/domain/comment<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_commentId.html">modules/forum/domain/comment<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_commentText.html">modules/forum/domain/comment<wbr>Text</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_commentVote.html">modules/forum/domain/comment<wbr>Vote</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_commentVotes.html">modules/forum/domain/comment<wbr>Votes</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_comments.html">modules/forum/domain/comments</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_events_commentPosted.html">modules/forum/domain/events/comment<wbr>Posted</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_events_commentVotesChanged.html">modules/forum/domain/events/comment<wbr>Votes<wbr>Changed</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_events_memberCreated.html">modules/forum/domain/events/member<wbr>Created</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_events_postCreated.html">modules/forum/domain/events/post<wbr>Created</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_events_postVotesChanged.html">modules/forum/domain/events/post<wbr>Votes<wbr>Changed</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_member.html">modules/forum/domain/member</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_memberDetails.html">modules/forum/domain/member<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_memberId.html">modules/forum/domain/member<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_post.html">modules/forum/domain/post</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_postDetails.html">modules/forum/domain/post<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_postId.html">modules/forum/domain/post<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_postLink.html">modules/forum/domain/post<wbr>Link</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_postSlug.html">modules/forum/domain/post<wbr>Slug</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_postText.html">modules/forum/domain/post<wbr>Text</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_postTitle.html">modules/forum/domain/post<wbr>Title</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_postType.html">modules/forum/domain/post<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_postVote.html">modules/forum/domain/post<wbr>Vote</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_postVotes.html">modules/forum/domain/post<wbr>Votes</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_services.html">modules/forum/domain/services</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_services_postService.html">modules/forum/domain/services/post<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_domain_vote.html">modules/forum/domain/vote</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_dtos_commentDTO.html">modules/forum/dtos/commentDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_dtos_memberDTO.html">modules/forum/dtos/memberDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_dtos_postDTO.html">modules/forum/dtos/postDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_infra_http_routes.html">modules/forum/infra/http/routes</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_infra_http_routes_comment.html">modules/forum/infra/http/routes/comment</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_infra_http_routes_member.html">modules/forum/infra/http/routes/member</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_infra_http_routes_post.html">modules/forum/infra/http/routes/post</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_mappers_commentDetailsMap.html">modules/forum/mappers/comment<wbr>Details<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_mappers_commentMap.html">modules/forum/mappers/comment<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_mappers_commentVoteMap.html">modules/forum/mappers/comment<wbr>Vote<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_mappers_memberDetailsMap.html">modules/forum/mappers/member<wbr>Details<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_mappers_memberIdMap.html">modules/forum/mappers/member<wbr>IdMap</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_mappers_memberMap.html">modules/forum/mappers/member<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_mappers_postDetailsMap.html">modules/forum/mappers/post<wbr>Details<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_mappers_postMap.html">modules/forum/mappers/post<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_mappers_postVoteMap.html">modules/forum/mappers/post<wbr>Vote<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_repos.html">modules/forum/repos</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_repos_commentRepo.html">modules/forum/repos/comment<wbr>Repo</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_repos_commentVotesRepo.html">modules/forum/repos/comment<wbr>Votes<wbr>Repo</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_repos_implementations_commentRepo.html">modules/forum/repos/implementations/comment<wbr>Repo</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_repos_implementations_sequelizeCommentVotesRepo.html">modules/forum/repos/implementations/sequelize<wbr>Comment<wbr>Votes<wbr>Repo</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_repos_implementations_sequelizeMemberRepo.html">modules/forum/repos/implementations/sequelize<wbr>Member<wbr>Repo</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_repos_implementations_sequelizePostRepo.html">modules/forum/repos/implementations/sequelize<wbr>Post<wbr>Repo</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_repos_implementations_sequelizePostVotesRepo.html">modules/forum/repos/implementations/sequelize<wbr>Post<wbr>Votes<wbr>Repo</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_repos_memberRepo.html">modules/forum/repos/member<wbr>Repo</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_repos_postRepo.html">modules/forum/repos/post<wbr>Repo</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_repos_postVotesRepo.html">modules/forum/repos/post<wbr>Votes<wbr>Repo</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_subscriptions_afterCommentPosted.html">modules/forum/subscriptions/after<wbr>Comment<wbr>Posted</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_subscriptions_afterCommentVotesChanged.html">modules/forum/subscriptions/after<wbr>Comment<wbr>Votes<wbr>Changed</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_subscriptions_afterPostVotesChanged.html">modules/forum/subscriptions/after<wbr>Post<wbr>Votes<wbr>Changed</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_subscriptions_afterUserCreated.html">modules/forum/subscriptions/after<wbr>User<wbr>Created</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_downvoteComment.html">modules/forum/use<wbr>Cases/comments/downvote<wbr>Comment</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_downvoteComment_DownvoteComment.html">modules/forum/use<wbr>Cases/comments/downvote<wbr>Comment/<wbr>Downvote<wbr>Comment</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_downvoteComment_DownvoteCommentController.html">modules/forum/use<wbr>Cases/comments/downvote<wbr>Comment/<wbr>Downvote<wbr>Comment<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_downvoteComment_DownvoteCommentDTO.html">modules/forum/use<wbr>Cases/comments/downvote<wbr>Comment/<wbr>Downvote<wbr>CommentDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_downvoteComment_DownvoteCommentErrors.html">modules/forum/use<wbr>Cases/comments/downvote<wbr>Comment/<wbr>Downvote<wbr>Comment<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_downvoteComment_DownvoteCommentResponse.html">modules/forum/use<wbr>Cases/comments/downvote<wbr>Comment/<wbr>Downvote<wbr>Comment<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_getCommentByCommentId.html">modules/forum/use<wbr>Cases/comments/get<wbr>Comment<wbr>ByComment<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_getCommentByCommentId_GetCommentByCommentId.html">modules/forum/use<wbr>Cases/comments/get<wbr>Comment<wbr>ByComment<wbr>Id/<wbr>Get<wbr>Comment<wbr>ByComment<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_getCommentByCommentId_GetCommentByCommentIdController.html">modules/forum/use<wbr>Cases/comments/get<wbr>Comment<wbr>ByComment<wbr>Id/<wbr>Get<wbr>Comment<wbr>ByComment<wbr>IdController</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_getCommentByCommentId_GetCommentByCommentIdErrors.html">modules/forum/use<wbr>Cases/comments/get<wbr>Comment<wbr>ByComment<wbr>Id/<wbr>Get<wbr>Comment<wbr>ByComment<wbr>IdErrors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_getCommentByCommentId_GetCommentByCommentIdRequestDTO.html">modules/forum/use<wbr>Cases/comments/get<wbr>Comment<wbr>ByComment<wbr>Id/<wbr>Get<wbr>Comment<wbr>ByComment<wbr>IdRequestDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_getCommentByCommentId_GetCommentByCommentIdResponseDTO.html">modules/forum/use<wbr>Cases/comments/get<wbr>Comment<wbr>ByComment<wbr>Id/<wbr>Get<wbr>Comment<wbr>ByComment<wbr>IdResponseDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_getCommentsByPostSlug.html">modules/forum/use<wbr>Cases/comments/get<wbr>Comments<wbr>ByPost<wbr>Slug</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_getCommentsByPostSlug_GetCommentsByPostSlug.html">modules/forum/use<wbr>Cases/comments/get<wbr>Comments<wbr>ByPost<wbr>Slug/<wbr>Get<wbr>Comments<wbr>ByPost<wbr>Slug</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_getCommentsByPostSlug_GetCommentsByPostSlugController.html">modules/forum/use<wbr>Cases/comments/get<wbr>Comments<wbr>ByPost<wbr>Slug/<wbr>Get<wbr>Comments<wbr>ByPost<wbr>Slug<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_getCommentsByPostSlug_GetCommentsByPostSlugErrors.html">modules/forum/use<wbr>Cases/comments/get<wbr>Comments<wbr>ByPost<wbr>Slug/<wbr>Get<wbr>Comments<wbr>ByPost<wbr>Slug<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_getCommentsByPostSlug_GetCommentsByPostSlugRequestDTO.html">modules/forum/use<wbr>Cases/comments/get<wbr>Comments<wbr>ByPost<wbr>Slug/<wbr>Get<wbr>Comments<wbr>ByPost<wbr>Slug<wbr>RequestDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_getCommentsByPostSlug_GetCommentsByPostSlugResponseDTO.html">modules/forum/use<wbr>Cases/comments/get<wbr>Comments<wbr>ByPost<wbr>Slug/<wbr>Get<wbr>Comments<wbr>ByPost<wbr>Slug<wbr>ResponseDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_replyToComment.html">modules/forum/use<wbr>Cases/comments/reply<wbr>ToComment</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_replyToComment_ReplyToComment.html">modules/forum/use<wbr>Cases/comments/reply<wbr>ToComment/<wbr>Reply<wbr>ToComment</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_replyToComment_ReplyToCommentController.html">modules/forum/use<wbr>Cases/comments/reply<wbr>ToComment/<wbr>Reply<wbr>ToComment<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_replyToComment_ReplyToCommentDTO.html">modules/forum/use<wbr>Cases/comments/reply<wbr>ToComment/<wbr>Reply<wbr>ToCommentDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_replyToComment_ReplyToCommentErrors.html">modules/forum/use<wbr>Cases/comments/reply<wbr>ToComment/<wbr>Reply<wbr>ToComment<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_replyToPost.html">modules/forum/use<wbr>Cases/comments/reply<wbr>ToPost</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_replyToPost_ReplyToPost.html">modules/forum/use<wbr>Cases/comments/reply<wbr>ToPost/<wbr>Reply<wbr>ToPost</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_replyToPost_ReplyToPostController.html">modules/forum/use<wbr>Cases/comments/reply<wbr>ToPost/<wbr>Reply<wbr>ToPost<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_replyToPost_ReplyToPostDTO.html">modules/forum/use<wbr>Cases/comments/reply<wbr>ToPost/<wbr>Reply<wbr>ToPostDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_replyToPost_ReplyToPostErrors.html">modules/forum/use<wbr>Cases/comments/reply<wbr>ToPost/<wbr>Reply<wbr>ToPost<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_updateCommentStats.html">modules/forum/use<wbr>Cases/comments/update<wbr>Comment<wbr>Stats</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_updateCommentStats_UpdateCommentStats.html">modules/forum/use<wbr>Cases/comments/update<wbr>Comment<wbr>Stats/<wbr>Update<wbr>Comment<wbr>Stats</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_updateCommentStats_UpdateCommentStatsDTO.html">modules/forum/use<wbr>Cases/comments/update<wbr>Comment<wbr>Stats/<wbr>Update<wbr>Comment<wbr>StatsDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_upvoteComment.html">modules/forum/use<wbr>Cases/comments/upvote<wbr>Comment</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_upvoteComment_UpvoteComment.html">modules/forum/use<wbr>Cases/comments/upvote<wbr>Comment/<wbr>Upvote<wbr>Comment</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_upvoteComment_UpvoteCommentController.html">modules/forum/use<wbr>Cases/comments/upvote<wbr>Comment/<wbr>Upvote<wbr>Comment<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_upvoteComment_UpvoteCommentDTO.html">modules/forum/use<wbr>Cases/comments/upvote<wbr>Comment/<wbr>Upvote<wbr>CommentDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_upvoteComment_UpvoteCommentErrors.html">modules/forum/use<wbr>Cases/comments/upvote<wbr>Comment/<wbr>Upvote<wbr>Comment<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_comments_upvoteComment_UpvoteCommentResonse.html">modules/forum/use<wbr>Cases/comments/upvote<wbr>Comment/<wbr>Upvote<wbr>Comment<wbr>Resonse</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_createMember.html">modules/forum/use<wbr>Cases/members/create<wbr>Member</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_createMember_CreateMember.html">modules/forum/use<wbr>Cases/members/create<wbr>Member/<wbr>Create<wbr>Member</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_createMember_CreateMemberDTO.html">modules/forum/use<wbr>Cases/members/create<wbr>Member/<wbr>Create<wbr>MemberDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_createMember_CreateMemberErrors.html">modules/forum/use<wbr>Cases/members/create<wbr>Member/<wbr>Create<wbr>Member<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_getCurrentMember.html">modules/forum/use<wbr>Cases/members/get<wbr>Current<wbr>Member</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_getCurrentMember_GetCurrentMemberController.html">modules/forum/use<wbr>Cases/members/get<wbr>Current<wbr>Member/<wbr>Get<wbr>Current<wbr>Member<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_getMemberByUserName.html">modules/forum/use<wbr>Cases/members/get<wbr>Member<wbr>ByUser<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_getMemberByUserName_GetMemberByUserName.html">modules/forum/use<wbr>Cases/members/get<wbr>Member<wbr>ByUser<wbr>Name/<wbr>Get<wbr>Member<wbr>ByUser<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_getMemberByUserName_GetMemberByUserNameController.html">modules/forum/use<wbr>Cases/members/get<wbr>Member<wbr>ByUser<wbr>Name/<wbr>Get<wbr>Member<wbr>ByUser<wbr>Name<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_getMemberByUserName_GetMemberByUserNameDTO.html">modules/forum/use<wbr>Cases/members/get<wbr>Member<wbr>ByUser<wbr>Name/<wbr>Get<wbr>Member<wbr>ByUser<wbr>NameDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_getMemberByUserName_GetMemberByUserNameErrors.html">modules/forum/use<wbr>Cases/members/get<wbr>Member<wbr>ByUser<wbr>Name/<wbr>Get<wbr>Member<wbr>ByUser<wbr>Name<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_getMemberByUserName_GetMemberByUserNameResponseDTO.html">modules/forum/use<wbr>Cases/members/get<wbr>Member<wbr>ByUser<wbr>Name/<wbr>Get<wbr>Member<wbr>ByUser<wbr>Name<wbr>ResponseDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_getMemberCommentsCount.html">modules/forum/use<wbr>Cases/members/get<wbr>Member<wbr>Comments<wbr>Count</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_getMemberCommentsCount_getMemberCommentCount.html">modules/forum/use<wbr>Cases/members/get<wbr>Member<wbr>Comments<wbr>Count/get<wbr>Member<wbr>Comment<wbr>Count</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_getMemberCommentsCount_getMemberCommentCountController.html">modules/forum/use<wbr>Cases/members/get<wbr>Member<wbr>Comments<wbr>Count/get<wbr>Member<wbr>Comment<wbr>Count<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_getMemberCommentsCount_getMemberCommentCountRequestDTO.html">modules/forum/use<wbr>Cases/members/get<wbr>Member<wbr>Comments<wbr>Count/get<wbr>Member<wbr>Comment<wbr>Count<wbr>RequestDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_getMemberCommentsCount_getMemberCommentCountResponseDTO.html">modules/forum/use<wbr>Cases/members/get<wbr>Member<wbr>Comments<wbr>Count/get<wbr>Member<wbr>Comment<wbr>Count<wbr>ResponseDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_getMemberPostCount.html">modules/forum/use<wbr>Cases/members/get<wbr>Member<wbr>Post<wbr>Count</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_getMemberPostCount_getMemberPostCount.html">modules/forum/use<wbr>Cases/members/get<wbr>Member<wbr>Post<wbr>Count/get<wbr>Member<wbr>Post<wbr>Count</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_getMemberPostCount_getMemberPostCountController.html">modules/forum/use<wbr>Cases/members/get<wbr>Member<wbr>Post<wbr>Count/get<wbr>Member<wbr>Post<wbr>Count<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_getMemberPostCount_getMemberPostCountRequestDTO.html">modules/forum/use<wbr>Cases/members/get<wbr>Member<wbr>Post<wbr>Count/get<wbr>Member<wbr>Post<wbr>Count<wbr>RequestDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_members_getMemberPostCount_getMemberPostCountResponseDTO.html">modules/forum/use<wbr>Cases/members/get<wbr>Member<wbr>Post<wbr>Count/get<wbr>Member<wbr>Post<wbr>Count<wbr>ResponseDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_createPost.html">modules/forum/use<wbr>Cases/post/create<wbr>Post</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_createPost_CreatePost.html">modules/forum/use<wbr>Cases/post/create<wbr>Post/<wbr>Create<wbr>Post</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_createPost_CreatePostController.html">modules/forum/use<wbr>Cases/post/create<wbr>Post/<wbr>Create<wbr>Post<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_createPost_CreatePostDTO.html">modules/forum/use<wbr>Cases/post/create<wbr>Post/<wbr>Create<wbr>PostDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_createPost_CreatePostErrors.html">modules/forum/use<wbr>Cases/post/create<wbr>Post/<wbr>Create<wbr>Post<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_downvotePost.html">modules/forum/use<wbr>Cases/post/downvote<wbr>Post</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_downvotePost_DownvotePost.html">modules/forum/use<wbr>Cases/post/downvote<wbr>Post/<wbr>Downvote<wbr>Post</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_downvotePost_DownvotePostController.html">modules/forum/use<wbr>Cases/post/downvote<wbr>Post/<wbr>Downvote<wbr>Post<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_downvotePost_DownvotePostDTO.html">modules/forum/use<wbr>Cases/post/downvote<wbr>Post/<wbr>Downvote<wbr>PostDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_downvotePost_DownvotePostErrors.html">modules/forum/use<wbr>Cases/post/downvote<wbr>Post/<wbr>Downvote<wbr>Post<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_downvotePost_DownvotePostResponse.html">modules/forum/use<wbr>Cases/post/downvote<wbr>Post/<wbr>Downvote<wbr>Post<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_editPost.html">modules/forum/use<wbr>Cases/post/edit<wbr>Post</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_editPost_EditPost.html">modules/forum/use<wbr>Cases/post/edit<wbr>Post/<wbr>Edit<wbr>Post</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_editPost_EditPostController.html">modules/forum/use<wbr>Cases/post/edit<wbr>Post/<wbr>Edit<wbr>Post<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_editPost_EditPostDTO.html">modules/forum/use<wbr>Cases/post/edit<wbr>Post/<wbr>Edit<wbr>PostDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_editPost_EditPostErrors.html">modules/forum/use<wbr>Cases/post/edit<wbr>Post/<wbr>Edit<wbr>Post<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_editPost_EditPostResponse.html">modules/forum/use<wbr>Cases/post/edit<wbr>Post/<wbr>Edit<wbr>Post<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getAllPostsAscending.html">modules/forum/use<wbr>Cases/post/get<wbr>All<wbr>Posts<wbr>Ascending</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getAllPostsAscending_GetAllPostsAscending.html">modules/forum/use<wbr>Cases/post/get<wbr>All<wbr>Posts<wbr>Ascending/<wbr>Get<wbr>All<wbr>Posts<wbr>Ascending</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getAllPostsAscending_GetAllPostsAscendingController.html">modules/forum/use<wbr>Cases/post/get<wbr>All<wbr>Posts<wbr>Ascending/<wbr>Get<wbr>All<wbr>Posts<wbr>Ascending<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getAllPostsAscending_GetAllPostsAscendingRequestDTO.html">modules/forum/use<wbr>Cases/post/get<wbr>All<wbr>Posts<wbr>Ascending/<wbr>Get<wbr>All<wbr>Posts<wbr>Ascending<wbr>RequestDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getAllPostsAscending_GetAllPostsAscendingResponseDTO.html">modules/forum/use<wbr>Cases/post/get<wbr>All<wbr>Posts<wbr>Ascending/<wbr>Get<wbr>All<wbr>Posts<wbr>Ascending<wbr>ResponseDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getPopularPosts.html">modules/forum/use<wbr>Cases/post/get<wbr>Popular<wbr>Posts</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getPopularPosts_GetPopularPosts.html">modules/forum/use<wbr>Cases/post/get<wbr>Popular<wbr>Posts/<wbr>Get<wbr>Popular<wbr>Posts</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getPopularPosts_GetPopularPostsController.html">modules/forum/use<wbr>Cases/post/get<wbr>Popular<wbr>Posts/<wbr>Get<wbr>Popular<wbr>Posts<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getPopularPosts_GetPopularPostsRequestDTO.html">modules/forum/use<wbr>Cases/post/get<wbr>Popular<wbr>Posts/<wbr>Get<wbr>Popular<wbr>Posts<wbr>RequestDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getPopularPosts_GetPopularPostsResponseDTO.html">modules/forum/use<wbr>Cases/post/get<wbr>Popular<wbr>Posts/<wbr>Get<wbr>Popular<wbr>Posts<wbr>ResponseDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getPostBySlug.html">modules/forum/use<wbr>Cases/post/get<wbr>Post<wbr>BySlug</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getPostBySlug_GetPostBySlug.html">modules/forum/use<wbr>Cases/post/get<wbr>Post<wbr>BySlug/<wbr>Get<wbr>Post<wbr>BySlug</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getPostBySlug_GetPostBySlugController.html">modules/forum/use<wbr>Cases/post/get<wbr>Post<wbr>BySlug/<wbr>Get<wbr>Post<wbr>BySlug<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getPostBySlug_GetPostBySlugDTO.html">modules/forum/use<wbr>Cases/post/get<wbr>Post<wbr>BySlug/<wbr>Get<wbr>Post<wbr>BySlugDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getPostBySlug_GetPostBySlugErrors.html">modules/forum/use<wbr>Cases/post/get<wbr>Post<wbr>BySlug/<wbr>Get<wbr>Post<wbr>BySlug<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getRecentPosts.html">modules/forum/use<wbr>Cases/post/get<wbr>Recent<wbr>Posts</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getRecentPosts_GetRecentPosts.html">modules/forum/use<wbr>Cases/post/get<wbr>Recent<wbr>Posts/<wbr>Get<wbr>Recent<wbr>Posts</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getRecentPosts_GetRecentPostsController.html">modules/forum/use<wbr>Cases/post/get<wbr>Recent<wbr>Posts/<wbr>Get<wbr>Recent<wbr>Posts<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getRecentPosts_GetRecentPostsRequestDTO.html">modules/forum/use<wbr>Cases/post/get<wbr>Recent<wbr>Posts/<wbr>Get<wbr>Recent<wbr>Posts<wbr>RequestDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_getRecentPosts_GetRecentPostsResponseDTO.html">modules/forum/use<wbr>Cases/post/get<wbr>Recent<wbr>Posts/<wbr>Get<wbr>Recent<wbr>Posts<wbr>ResponseDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_updatePostStats.html">modules/forum/use<wbr>Cases/post/update<wbr>Post<wbr>Stats</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_updatePostStats_UpdatePostStats.html">modules/forum/use<wbr>Cases/post/update<wbr>Post<wbr>Stats/<wbr>Update<wbr>Post<wbr>Stats</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_updatePostStats_UpdatePostStatsDTO.html">modules/forum/use<wbr>Cases/post/update<wbr>Post<wbr>Stats/<wbr>Update<wbr>Post<wbr>StatsDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_updatePostStats_UpdatePostStatsErrors.html">modules/forum/use<wbr>Cases/post/update<wbr>Post<wbr>Stats/<wbr>Update<wbr>Post<wbr>Stats<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_upvotePost.html">modules/forum/use<wbr>Cases/post/upvote<wbr>Post</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_upvotePost_UpvotePost.html">modules/forum/use<wbr>Cases/post/upvote<wbr>Post/<wbr>Upvote<wbr>Post</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_upvotePost_UpvotePostController.html">modules/forum/use<wbr>Cases/post/upvote<wbr>Post/<wbr>Upvote<wbr>Post<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_upvotePost_UpvotePostDTO.html">modules/forum/use<wbr>Cases/post/upvote<wbr>Post/<wbr>Upvote<wbr>PostDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_upvotePost_UpvotePostErrors.html">modules/forum/use<wbr>Cases/post/upvote<wbr>Post/<wbr>Upvote<wbr>Post<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_forum_useCases_post_upvotePost_UpvotePostResponse.html">modules/forum/use<wbr>Cases/post/upvote<wbr>Post/<wbr>Upvote<wbr>Post<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_domain_emailVerificationToken.html">modules/users/domain/email<wbr>Verification<wbr>Token</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_domain_events_emailVerified.html">modules/users/domain/events/email<wbr>Verified</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_domain_events_userCreated.html">modules/users/domain/events/user<wbr>Created</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_domain_events_userDeleted.html">modules/users/domain/events/user<wbr>Deleted</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_domain_events_userLoggedIn.html">modules/users/domain/events/user<wbr>Logged<wbr>In</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_domain_jwt.html">modules/users/domain/jwt</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_domain_user.html">modules/users/domain/user</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_domain_userEmail.html">modules/users/domain/user<wbr>Email</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_domain_userId.html">modules/users/domain/user<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_domain_userName.html">modules/users/domain/user<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_domain_userPassword.html">modules/users/domain/user<wbr>Password</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_dtos_userDTO.html">modules/users/dtos/userDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_infra_http_models_decodedRequest.html">modules/users/infra/http/models/decoded<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_infra_http_routes.html">modules/users/infra/http/routes</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_mappers_userMap.html">modules/users/mappers/user<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_repos.html">modules/users/repos</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_repos_implementations_sequelizeUserRepo.html">modules/users/repos/implementations/sequelize<wbr>User<wbr>Repo</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_repos_userRepo.html">modules/users/repos/user<wbr>Repo</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_services.html">modules/users/services</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_services_authService.html">modules/users/services/auth<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_services_redis_abstractRedisClient.html">modules/users/services/redis/abstract<wbr>Redis<wbr>Client</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_services_redis_redisAuthService.html">modules/users/services/redis/redis<wbr>Auth<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_services_redis_redisConnection.html">modules/users/services/redis/redis<wbr>Connection</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_ListMember.html">modules/users/use<wbr>Cases/<wbr>List<wbr>Member</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_ListMember_ListMembers.html">modules/users/use<wbr>Cases/<wbr>List<wbr>Member/<wbr>List<wbr>Members</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_ListMember_ListMembersController.html">modules/users/use<wbr>Cases/<wbr>List<wbr>Member/<wbr>List<wbr>Members<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_ListMember_ListMembersResponseDTO.html">modules/users/use<wbr>Cases/<wbr>List<wbr>Member/<wbr>List<wbr>Members<wbr>ResponseDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_ListMember_ListMembrsErrors.html">modules/users/use<wbr>Cases/<wbr>List<wbr>Member/<wbr>List<wbr>Membrs<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_ListMember_ListMembrsRequestDTO.html">modules/users/use<wbr>Cases/<wbr>List<wbr>Member/<wbr>List<wbr>Membrs<wbr>RequestDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_createUser.html">modules/users/use<wbr>Cases/create<wbr>User</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_createUser_CreateUserController.html">modules/users/use<wbr>Cases/create<wbr>User/<wbr>Create<wbr>User<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_createUser_CreateUserDTO.html">modules/users/use<wbr>Cases/create<wbr>User/<wbr>Create<wbr>UserDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_createUser_CreateUserErrors.html">modules/users/use<wbr>Cases/create<wbr>User/<wbr>Create<wbr>User<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_createUser_CreateUserResponse.html">modules/users/use<wbr>Cases/create<wbr>User/<wbr>Create<wbr>User<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_createUser_CreateUserUseCase.html">modules/users/use<wbr>Cases/create<wbr>User/<wbr>Create<wbr>User<wbr>Use<wbr>Case</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_deleteUser.html">modules/users/use<wbr>Cases/delete<wbr>User</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_deleteUser_DeleteUserController.html">modules/users/use<wbr>Cases/delete<wbr>User/<wbr>Delete<wbr>User<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_deleteUser_DeleteUserDTO.html">modules/users/use<wbr>Cases/delete<wbr>User/<wbr>Delete<wbr>UserDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_deleteUser_DeleteUserErrors.html">modules/users/use<wbr>Cases/delete<wbr>User/<wbr>Delete<wbr>User<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_deleteUser_DeleteUserUseCase.html">modules/users/use<wbr>Cases/delete<wbr>User/<wbr>Delete<wbr>User<wbr>Use<wbr>Case</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_getCurrentUser.html">modules/users/use<wbr>Cases/get<wbr>Current<wbr>User</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_getCurrentUser_GetCurrentUserController.html">modules/users/use<wbr>Cases/get<wbr>Current<wbr>User/<wbr>Get<wbr>Current<wbr>User<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_getUserByUserName.html">modules/users/use<wbr>Cases/get<wbr>User<wbr>ByUser<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_getUserByUserName_GetUserByUserName.html">modules/users/use<wbr>Cases/get<wbr>User<wbr>ByUser<wbr>Name/<wbr>Get<wbr>User<wbr>ByUser<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_getUserByUserName_GetUserByUserNameController.html">modules/users/use<wbr>Cases/get<wbr>User<wbr>ByUser<wbr>Name/<wbr>Get<wbr>User<wbr>ByUser<wbr>Name<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_getUserByUserName_GetUserByUserNameDTO.html">modules/users/use<wbr>Cases/get<wbr>User<wbr>ByUser<wbr>Name/<wbr>Get<wbr>User<wbr>ByUser<wbr>NameDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_getUserByUserName_GetUserByUserNameErrors.html">modules/users/use<wbr>Cases/get<wbr>User<wbr>ByUser<wbr>Name/<wbr>Get<wbr>User<wbr>ByUser<wbr>Name<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_login.html">modules/users/use<wbr>Cases/login</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_login_LoginController.html">modules/users/use<wbr>Cases/login/<wbr>Login<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_login_LoginDTO.html">modules/users/use<wbr>Cases/login/<wbr>LoginDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_login_LoginErrors.html">modules/users/use<wbr>Cases/login/<wbr>Login<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_login_LoginUseCase.html">modules/users/use<wbr>Cases/login/<wbr>Login<wbr>Use<wbr>Case</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_logout.html">modules/users/use<wbr>Cases/logout</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_logout_LogoutController.html">modules/users/use<wbr>Cases/logout/<wbr>Logout<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_logout_LogoutDTO.html">modules/users/use<wbr>Cases/logout/<wbr>LogoutDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_logout_LogoutErrors.html">modules/users/use<wbr>Cases/logout/<wbr>Logout<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_logout_LogoutUseCase.html">modules/users/use<wbr>Cases/logout/<wbr>Logout<wbr>Use<wbr>Case</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_refreshAccessToken.html">modules/users/use<wbr>Cases/refresh<wbr>Access<wbr>Token</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_refreshAccessToken_RefreshAccessToken.html">modules/users/use<wbr>Cases/refresh<wbr>Access<wbr>Token/<wbr>Refresh<wbr>Access<wbr>Token</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_refreshAccessToken_RefreshAccessTokenController.html">modules/users/use<wbr>Cases/refresh<wbr>Access<wbr>Token/<wbr>Refresh<wbr>Access<wbr>Token<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_refreshAccessToken_RefreshAccessTokenDTO.html">modules/users/use<wbr>Cases/refresh<wbr>Access<wbr>Token/<wbr>Refresh<wbr>Access<wbr>TokenDTO</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/modules_users_useCases_refreshAccessToken_RefreshAccessTokenErrors.html">modules/users/use<wbr>Cases/refresh<wbr>Access<wbr>Token/<wbr>Refresh<wbr>Access<wbr>Token<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_core_AppError.html">shared/core/<wbr>App<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_core_Guard.html">shared/core/<wbr>Guard</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_core_Result.html">shared/core/<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_core_UseCase.html">shared/core/<wbr>Use<wbr>Case</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_core_UseCaseError.html">shared/core/<wbr>Use<wbr>Case<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_core_WithChanges.html">shared/core/<wbr>With<wbr>Changes</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_domain_AggregateRoot.html">shared/domain/<wbr>Aggregate<wbr>Root</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_domain_DomainService.html">shared/domain/<wbr>Domain<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_domain_Entity.html">shared/domain/<wbr>Entity</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_domain_Identifier.html">shared/domain/<wbr>Identifier</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_domain_UniqueEntityID.html">shared/domain/<wbr>Unique<wbr>EntityID</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_domain_ValueObject.html">shared/domain/<wbr>Value<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_domain_WatchedList.html">shared/domain/<wbr>Watched<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_domain_events_DomainEvents.html">shared/domain/events/<wbr>Domain<wbr>Events</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_domain_events_IDomainEvent.html">shared/domain/events/IDomain<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_domain_events_IHandle.html">shared/domain/events/IHandle</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_infra_Mapper.html">shared/infra/<wbr>Mapper</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_infra_database_sequelize_config_config.html">shared/infra/database/sequelize/config/config</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_infra_database_sequelize_migrations_20191004134636_initial_migration.html">shared/infra/database/sequelize/migrations/20191004134636-<wbr>initial-<wbr>migration</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_infra_database_sequelize_models.html">shared/infra/database/sequelize/models</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_infra_database_sequelize_models_BaseUser.html">shared/infra/database/sequelize/models/<wbr>Base<wbr>User</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_infra_database_sequelize_models_Comment.html">shared/infra/database/sequelize/models/<wbr>Comment</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_infra_database_sequelize_models_CommentVote.html">shared/infra/database/sequelize/models/<wbr>Comment<wbr>Vote</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_infra_database_sequelize_models_Member.html">shared/infra/database/sequelize/models/<wbr>Member</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_infra_database_sequelize_models_Post.html">shared/infra/database/sequelize/models/<wbr>Post</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_infra_database_sequelize_models_PostVote.html">shared/infra/database/sequelize/models/<wbr>Post<wbr>Vote</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_infra_database_sequelize_runner.html">shared/infra/database/sequelize/runner</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_infra_http.html">shared/infra/http</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_infra_http_api_v1.html">shared/infra/http/api/v1</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_infra_http_graphql_forum.html">shared/infra/http/graphql/forum</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_infra_http_graphql_server.html">shared/infra/http/graphql/server</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_infra_http_graphql_users.html">shared/infra/http/graphql/users</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_infra_http_models_BaseController.html">shared/infra/http/models/<wbr>Base<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_infra_http_utils_Middleware.html">shared/infra/http/utils/<wbr>Middleware</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_utils_FlowUtils.html">shared/utils/<wbr>Flow<wbr>Utils</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/shared_utils_TextUtils.html">shared/utils/<wbr>Text<wbr>Utils</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+@startuml US007
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - Comment on a Post 
+
+autonumber
+
+actor "Member" as Member
+participant "System" as System
+
+activate Member
+
+Member -> System : Click on a post to comment
+activate System
+System --> Member : Request data (comment)
+deactivate System
+Member -> System : Post the request data (and press the "post comment" button)
+activate System
+System --> Member : Comment is posted and displayed below the post
+deactivate System
+deactivate Member
+
+@enduml
+

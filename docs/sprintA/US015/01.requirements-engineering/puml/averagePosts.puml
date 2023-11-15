@@ -1,0 +1,35 @@
+@startuml SD-AveragePosts
+autonumber 
+
+actor User
+participant Routes
+participant "getAveragePostsForDayController: GetAveragePostsForDayController" as GetAveragePostsForDayController
+participant "useCase: GetAveragePostsForDay " as GetAveragePostsForDayUseCase
+participant "postRepo: IPostRepo" as IPostRepo
+database MySQL as database
+
+User -> Routes: call endpoint (method: "GET", route: "/averageposts")
+    activate Routes
+    Routes -> GetAveragePostsForDayController: execute(req, res) 
+    activate GetAveragePostsForDayController
+        GetAveragePostsForDayController -> GetAveragePostsForDayController: executeImpl(req, res)
+        GetAveragePostsForDayController -> GetAveragePostsForDayUseCase: execute(dto)
+        activate GetAveragePostsForDayUseCase
+             GetAveragePostsForDayUseCase-> IPostRepo: getAveragePostsForDay()
+            activate IPostRepo
+                IPostRepo -> database: PostModel.findAll(detailsQuery)
+                activate database
+                    database -> IPostRepo: Number
+                deactivate database
+                IPostRepo -> GetAveragePostsForDayUseCase: Number 
+            deactivate IPostRepo
+
+            GetAveragePostsForDayUseCase -> GetAveragePostsForDayController:  Result.ok<Number>(average)
+            deactivate GetAveragePostsForDayUseCase
+
+        GetAveragePostsForDayController -> Routes:  this.ok<GetAveragePostsForDayResponseDTO>(res, ...);
+        deactivate GetAveragePostsForDayController
+        Routes -> User
+    deactivate Routes
+@enduml
+

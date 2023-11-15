@@ -1,0 +1,21 @@
+@startuml US013-SSD
+
+title Sequence diagram US013-SSD  (Member delete user (Username))
+
+actor Member
+boundary System
+
+activate Member
+
+Member -> System: Clicks on delete button
+activate System
+System --> Member: 
+deactivate System
+Member -> System: Confirms user deletion
+activate System
+System --> Member: Displays success message "Success! The user has been deleted."
+
+deactivate System
+deactivate Member
+
+@enduml

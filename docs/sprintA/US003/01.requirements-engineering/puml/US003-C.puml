@@ -1,0 +1,32 @@
+@startuml US003-C
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - View member info - User's access privileges are checked before displaying the information
+autonumber
+
+actor "User" as User
+participant ":System" as System
+
+activate User
+
+User -> System: Request member information
+System -> System: Validate request
+alt Valid request
+    System -> System: Check user access privileges
+    alt User has access
+        System -> System: Retrieve member information
+        alt Member found
+            System -> System: Prepare member info response
+            System --> User: Display member information
+        else Member not found
+            System --> User: Display error message (Member not found)
+        end
+    else User access denied
+        System --> User: Display error message (Access denied)
+    end
+else Invalid request
+    System --> User: Display error message (Invalid request)
+end
+@enduml

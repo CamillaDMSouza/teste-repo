@@ -1,0 +1,19 @@
+
+@startuml 
+
+title Sequence diagram US012-SSD (Display information of member)
+actor User
+boundary System
+
+activate User
+User -> System:1. Go to DDD Forum home page
+activate System
+System --> User:2. Display home page with posts from the Popular Posts section
+deactivate System
+User -> System: 3. Click on Username
+activate System
+System --> User:4. Displays information of the member
+deactivate System
+deactivate User
+
+@enduml

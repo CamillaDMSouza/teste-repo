@@ -1,0 +1,26 @@
+@startuml US011
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - Visualization of Posts by Number of votes ascending - User
+
+autonumber
+
+actor "User" as User
+participant "System" as System
+
+activate User
+    User -> System: Access the forum
+   
+    activate System
+        System --> User : Return the default page 
+    deactivate System
+
+    User -> System : Access the "Votes Ascending" posts options
+
+    activate System
+        System --> User : The Posts sorted by votes ascending posts  
+    deactivate System
+
+@enduml

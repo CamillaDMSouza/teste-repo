@@ -1,0 +1,36 @@
+#Flagged .gitignore file (script on package.json)
+# Ignore Folder:
+.circleci/
+.github/
+.husky/
+.vscode/
+automate/
+bin/
+docs/
+images/
+scripts/
+# Ignore Specific Files
+.all-contributorsrc
+.dockerignore
+.env
+.env.template
+.gitignore
+.nvmrc
+.prettierignore
+.prettierrc
+.sequelizerc
+docker-compose.yml
+Dockerfile
+entrypoint.sh
+
+# Ignore File Formats with exception of TypeScript & React
+*.js
+*.jsx
+*.json
+*.md
+*.svg
+*.sh
+!*.ts
+!*.tsx
+!*.css
+!*.html

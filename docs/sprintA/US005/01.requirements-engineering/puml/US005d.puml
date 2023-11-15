@@ -1,0 +1,29 @@
+@startuml US005d-SSD
+title Sequence diagram US005-SSD  (Member Post Creation (Title and link))
+
+actor Member
+boundary System
+
+activate Member
+
+
+Member -> System: 1. Click button "submit" Create Post
+activate System
+
+System -> Member: 2. Display Post Creation Form
+deactivate System
+
+Member -> System: 3. Enter Post Details (title and link)
+activate System
+
+System -> Member: 4. Redirect to Post View Page
+deactivate System
+
+Member -> System: 5. Click Submit Post
+activate System
+
+System -> Member: 7. Display Confirmation Message
+deactivate System
+deactivate Member
+
+@enduml

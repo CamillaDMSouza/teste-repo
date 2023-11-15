@@ -1,0 +1,65 @@
+@startuml SD-getMemberCommentCount
+autonumber "<b>(0)"
+title US012 SD - getMemberCommentCount
+
+actor Users
+participant Routes
+participant "getMemberCommentCountController:getMemberCommentCountController" as getMemberCommentCountController
+participant "useCase: GetMemberCommentCountUseCase" as GetMemberCommentCountUseCase
+participant "memberRepo: IMemberRepo" as IMemberRepo
+participant "getMemberByUserId:getMemberByUserId" as Member
+participant "commentRepo: ICommentRepo" as ICommentRepo
+participant "getMemberCommentCount:getMemberCommentCount" as CommentCount
+database MySQL as DataBase
+
+Users -> Routes : call Endpoint (method: GET, route: "/commentcount/
+activate Routes
+
+Routes -> getMemberCommentCountController: .execute(req, res)
+activate getMemberCommentCountController
+
+getMemberCommentCountController -> getMemberCommentCountController: .executeImpl(req: DecodedExpressRequest, res: express.Response)
+getMemberCommentCountController -> GetMemberCommentCountUseCase: .execute(dto)
+activate GetMemberCommentCountUseCase
+
+    GetMemberCommentCountUseCase -> IMemberRepo: .getMemberIdByUserId(userId: string)
+    activate IMemberRepo
+
+        IMemberRepo -> Member: .getMemberByUserId(userId: string)
+        activate Member
+
+Member -> DataBase: .findOne(userId)
+activate DataBase
+
+DataBase --> Member: MemberId
+deactivate DataBase
+
+Member --> IMemberRepo: MemberId
+deactivate Member
+
+IMemberRepo --> GetMemberCommentCountUseCase: MemberId
+deactivate IMemberRepo
+
+GetMemberCommentCountUseCase -> ICommentRepo: .getMemberCommentCount (memberId: MemberId)
+activate ICommentRepo
+
+ICommentRepo -> CommentCount: .getMemberCommentCount(memberId: MemberId)
+activate CommentCount
+
+CommentCount -> DataBase: .count(memberId: MemberId)
+activate DataBase
+
+DataBase --> CommentCount: memberCommentCount
+deactivate DataBase
+
+CommentCount --> ICommentRepo: memberCommentCount
+deactivate CommentCount
+
+ICommentRepo --> GetMemberCommentCountUseCase: memberCommentCount
+deactivate ICommentRepo
+
+deactivate GetMemberCommentCountUseCase 
+deactivate getMemberCommentCountController
+deactivate Routes
+
+@enduml
